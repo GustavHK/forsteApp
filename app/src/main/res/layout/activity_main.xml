@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView
+
     xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".MainActivity"
-    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="false"
 
-    >
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        >
+        android:background="@android:color/white">
 
 
         <TextView
             android:id="@+id/overskrift"
             android:layout_width="313dp"
             android:layout_height="34dp"
+            android:layout_marginLeft="85dp"
             android:layout_marginTop="40dp"
             android:gravity="center"
             android:text="Den Monster Fede App"
             android:textColor="@android:color/holo_blue_dark"
-            android:textStyle="bold"
             android:textSize="27sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="85dp"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -56,8 +58,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Indstillinger"
             android:layout_marginRight="50dp"
+            android:text="Indstillinger"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/status" />
 
@@ -73,16 +75,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/overskrift" />
 
+
         <WebView
             android:id="@+id/browser"
-            android:layout_width="412dp"
-            android:layout_height="303dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/gåTilTop"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/URL" />
+            app:layout_constraintTop_toBottomOf="@id/URL"
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/URL"
@@ -92,7 +96,7 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="URL:"
-            android:inputType="textPersonName"
+            android:inputType="textWebEmailAddress"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vejledning" />
 
@@ -107,6 +111,23 @@
             tools:layout_editor_absoluteY="314dp">
 
         </Button>
+        <Button
+            android:id="@+id/gåTilTop"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+
+            android:text="Gå til toppen"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/browser"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>
